@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Ezan Sustur</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Ezan Sustur</h1>
+    <label class="switch" title="Uzantıyı aç veya kapat">
+      <input type="checkbox" id="enabled" role="switch" aria-label="Uzantı açık">
+      <span class="track"></span>
+    </label>
+  </header>
+
+  <div id="body">
+    <section class="sky">
+      <svg id="arc" viewBox="0 0 300 124" aria-hidden="true">
+        <path id="arc-base" d="M20 108 A130 90 0 0 1 280 108" pathLength="1"/>
+        <path id="arc-done" d="M20 108 A130 90 0 0 1 280 108" pathLength="1"/>
+        <g id="dots"></g>
+        <circle id="sun" r="7.5" cx="150" cy="-40"/>
+      </svg>
+      <div class="count" id="count" role="timer">--:--:--</div>
+      <p class="next" id="next">Vakitler yükleniyor…</p>
+    </section>
+
+    <ul id="list" class="prayers"></ul>
+
+    <section class="settings">
+      <div class="place">
+        <label>Şehir <input id="city" type="text" autocomplete="off" spellcheck="false"></label>
+        <label>Ülke <input id="country" type="text" autocomplete="off" spellcheck="false"></label>
+      </div>
+      <div class="line">
+        <span>Ezan bitince müziği devam ettir</span>
+        <label class="switch">
+          <input type="checkbox" id="resume" role="switch" aria-label="Ezan bitince devam ettir">
+          <span class="track"></span>
+        </label>
+      </div>
+      <div class="line" id="durationLine">
+        <span>Bekleme süresi</span>
+        <div class="stepper">
+          <button type="button" id="dec" aria-label="Süreyi azalt">−</button>
+          <output id="duration">5 dk</output>
+          <button type="button" id="inc" aria-label="Süreyi artır">+</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="actions">
+        <button type="button" id="test" class="ghost">Şimdi duraklat</button>
+        <button type="button" id="testResume" class="ghost">Devam ettir</button>
+      </div>
+      <p id="status" role="status"></p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
